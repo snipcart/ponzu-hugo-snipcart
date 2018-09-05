@@ -1,0 +1,8 @@
+[build]
+  base    = "myshop.com"
+  publish = "myshop.com/public"
+  command = "./build.sh"
+
+[context.production.environment]
+HUGO_VERSION = "0.47.1"
+HUGO_ENV = "production"

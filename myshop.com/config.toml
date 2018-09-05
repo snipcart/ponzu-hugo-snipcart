@@ -1,0 +1,30 @@
+baseurl = "https://snipcart-ponzu-hugo.netlify.com/"
+DefaultContentLanguage = "en"
+title = "Global Flooding Apocalypse Store"
+theme = "beautifulhugo"
+metaDataFormat = "yaml"
+pygmentsStyle = "trac"
+pygmentsUseClasses = false
+pygmentsCodeFences = false
+pygmentsCodefencesGuessSyntax = false
+
+[Params]
+  subtitle = "Prepare to deal with the tide!"
+  logo = "img/flood.jpg"
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = false
+  comments = false
+  readingTime = false
+  useHLJS = false
+  socialShare = false
+  snipcartAPIKey = "Njk5ZjgzOWYtOGYyOS00ZmM0LTlkODItNGMxMjk4YWRiYTgwNjM2NzE2NzkyNTU0MTg4NDUw"
+
+[Author]
+  name = "Snipcart"
+  website = "https://snipcart.com"
+  email = "geeks+ponzu@snipcart.com"
+  facebook = "snipcart"
+  github = "snipcart/snipcart-ponzu"
+  twitter = "snipcart"

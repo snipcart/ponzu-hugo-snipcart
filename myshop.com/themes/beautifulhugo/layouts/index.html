@@ -1,0 +1,79 @@
+{{ define "main" }}
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {{ with .Content }}
+          <div class="well">
+            {{.}}
+          </div>
+        {{ end }}
+
+        <div class="posts-list">
+          {{ $pag := .Paginate (where .Data.Pages "Type" "product") }}
+          {{ range $pag.Pages }}
+            <article class="post-preview">
+              
+              <h2 class="post-title">{{ .Title }}</h2>
+              {{ if .Params.subtitle }}
+                <h3 class="post-subtitle">
+                {{ .Params.subtitle }}
+                </h3>
+              {{ end }}
+
+              {{ partial "post_meta.html" . }}
+              <div class="post-entry">
+                <p>
+                  <span class="label label-success">{{ .Params.price }} $</span>
+                  {{ if gt .Params.stock 0 }}
+                    <span class="label label-default">{{ .Params.stock }} left</span>
+                  {{ end }}
+                </p>
+                <p>
+                    {{ .Content }}
+                </p>
+                {{ if le .Params.stock 0 }}
+                    <span class="label label-danger">Out of stock</span>
+                {{ else }}
+                  <button
+                    class="btn btn-default snipcart-add-item"
+                    data-item-id="{{ .Params.id }}"
+                    data-item-name="{{ .Title }}"
+                    data-item-price="{{ .Params.price }}"
+                    data-item-image="{{ .Params.image }}"
+                    data-item-url="/"
+                    data-item-max-quantity="1"
+                    data-item-description="{{ .Params.description }}">
+                    Add to cart
+                  </button>
+                {{end}}
+              </div>
+
+              {{ if .Params.tags }}
+                <div class="blog-tags">
+                  {{ range .Params.tags }}
+                    <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+                  {{ end }}
+                </div>
+              {{ end }}
+            </article>
+          {{ end }}
+        </div>
+
+        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+          <ul class="pager main-pager">
+            {{ if .Paginator.HasPrev }}
+              <li class="previous">
+                <a href="{{ .Paginator.Prev.URL | absURL }}">&larr; {{ i18n "newerPosts" }}</a>
+              </li>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+              <li class="next">
+                <a href="{{ .Paginator.Next.URL | absURL }}">{{ i18n "olderPosts" }} &rarr;</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}
