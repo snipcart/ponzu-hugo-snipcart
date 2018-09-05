@@ -1,6 +1,6 @@
 baseurl = "https://snipcart-ponzu-hugo.netlify.com/"
 DefaultContentLanguage = "en"
-title = "Global Flooding Apocalypse Store"
+title = "Global Flooding Rescue Store"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
 pygmentsStyle = "trac"
