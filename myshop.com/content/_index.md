@@ -1,1 +1,1 @@
-Sea level [is rising](https://ocean.si.edu/through-time/ancient-seas/sea-level-rise). A rise of a few feet only could have [disastrous consequences](http://flood.firetree.net/?ll=45.3412,12.9813&zoom=10&m=1). Better be prepared!
+Sea level [is rising](https://ocean.si.edu/through-time/ancient-seas/sea-level-rise), and a rise of a few meters only [could get some people's feet wet](http://flood.firetree.net/?ll=45.3412,12.9813&zoom=10&m=1). Better be prepared!
